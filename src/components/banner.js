@@ -50,6 +50,7 @@ export default function Banner() {
           <span>Scroll down</span>
         </div>
       </div>
+      <div className="fixed-misc">Visual Artist and Photographor</div>
     </div>
   )
 }

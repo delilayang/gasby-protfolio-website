@@ -119,8 +119,8 @@ header {
             }
 
             @media (max-width: 1280px) {
-                font-size: 5.6rem;
-                letter-spacing: 40px;
+                font-size: 3.5rem;
+                letter-spacing: 15px;
             }
         }
 
@@ -185,5 +185,206 @@ header {
         text-transform: uppercase;
         position: absolute;
         bottom: 48px;
+    }
+
+    .fixed-misc {
+        position: fixed;
+        top: 50%;
+        right: -40px;
+        transform: rotate(-90deg);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+        letter-spacing: 1.5px;
+        color: $white;
+        mix-blend-mode: difference;
+        z-index: 8;
+
+        @media (max-width: 1440px) {
+            right: -112px;
+        }
+
+        @media (max-width: 1280px) {
+            font-size: 0.7rem;
+            right: -100px;
+        }
+    }
+}
+
+// About blurb
+.about-blurb {
+    padding: 48px 0;
+    background: $white;
+    position: relative;
+
+    .inner-blurb {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .content {
+            width: 33%;
+
+            @media (max-width: 1440px) {
+                width: 40%;
+            }
+
+            @media (max-width: 1280px) {
+                width: 30%;
+            }
+
+            h3 {
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 1.8rem;
+                letter-spacing: 1.5px;
+                margin: 0;
+
+                @media (max-width: 1280px) {
+                    font-size: 1rem;
+                }
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 2rem;
+                font-weight: 300;
+                margin: 40px 0 72px;
+
+                @media (max-width: 1280px) {
+                    font-size: 0.5rem;
+                    line-height: 1.4rem;
+                }
+            }
+
+            .btn-row {
+                a {
+                    font-weight: 700;
+                    font-size: 0.875rem;
+                    letter-spacing: 1.5px;
+                    color: $black;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .images {
+            width: 50%;
+            height: 1000px;
+            position: relative;
+            z-index: 7;
+
+            @media (max-width: 1440px) {
+                height: 800px;
+            }
+
+            .top-right {
+                position: absolute;
+                width: 460px;
+                top: 0;
+                right: 0;
+                z-index: 4;
+
+                @media (max-width: 1440px) {
+                    width: 360px;
+                }
+
+                @media (max-width: 1280px) {
+                    width: 250px;
+                    top: 120px;
+                    right: 20px;
+                }
+            }
+
+            .bottom-left {
+                position: absolute;
+                width: 410px;
+                left: 0;
+                bottom: 0;
+
+                @media (max-width: 1440px) {
+                    width: 310px;
+                }
+
+                @media (max-width: 1280px) {
+                    width: 250px;
+                    bottom: 120px;
+                    left: 20px;
+                }
+            }
+        }
+    }
+
+    .black-box {
+        background: $black;
+        height: 418px;
+        width: 836px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @media (max-width: 1440px) {
+            width: 636px;
+            height: 340px;
+        }
+
+        @media (max-width: 1280px) {
+            width: 440px;
+            height: 245px;
+        }
+
+        &.overlay {
+            z-index: 7;
+            background: $maroon;
+            mix-blend-mode: overlay;
+        }
+    }
+}
+
+// video section
+.video-section {
+    margin-top: 160px;
+
+    .container {
+        .video-player {
+            width: 100%;
+            margin: 0 auto;
+
+            video {
+                width: 100%;
+                outline: none;
+            }
+        }
+
+        .video-content {
+            display: flex;
+            justify-content: space-between;
+            margin: 80px 0 120px;
+
+            .title {
+                width: 50%;
+
+                h3 {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 1.8rem;
+                    letter-spacing: 1.5px;
+                    margin: 0;
+                }
+            }
+
+            .content {
+                width: 50%;
+
+                p {
+                    font-size: 1rem;
+                    line-height: 2rem;
+                    font-weight: 300;
+                    margin: 0;
+                }
+            }
+        }
     }
 }
