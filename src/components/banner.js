@@ -42,9 +42,12 @@ export default function Banner() {
           <div className="main-image">
             <Img fluid={data.poppinShadesImage.childImageSharp.fluid} />
           </div>
-          <div className="main-image right">
+          <div className="side-image right">
             <Img fluid={data.orangeImage.childImageSharp.fluid} />
           </div>
+        </div>
+        <div className="scroll">
+          <span>Scroll down</span>
         </div>
       </div>
     </div>
