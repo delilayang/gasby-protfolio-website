@@ -18,7 +18,7 @@ export default function Contact() {
         placeholder="name"
         name="nameRequired"
         ref={register({
-          required: true,
+          required: "NAME REQUIRED!",
           minLength: { value: 3, message: "Name is invalid!" },
         })}
       />
@@ -35,14 +35,14 @@ export default function Contact() {
         placeholder="password"
         name="passwordRequired"
         ref={register({
-          required: "PASSWORD REQUIRED",
+          required: "PASSWORD REQUIRED!",
           minLength: { value: 8, message: "TOO SHORT" },
         })}
       />
       {errors.passwordRequired && (
         <span className="error-message">{errors.passwordRequired.message}</span>
       )}
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" className="btn-submit" />
     </form>
   )
 }
