@@ -7,7 +7,11 @@ export default function Contact() {
   console.log(watch("example"))
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      autoComplete="off"
+      onSubmit={handleSubmit(onSubmit)}
+      className="contact-form"
+    >
       <label>name:</label>
       <input
         type="text"
@@ -18,7 +22,9 @@ export default function Contact() {
           minLength: { value: 3, message: "Name is invalid!" },
         })}
       />
-      {errors.nameRequired && <span>{errors.nameRequired.message} </span>}
+      {errors.nameRequired && (
+        <span className="error-message">{errors.nameRequired.message} </span>
+      )}
       <label>age:</label>
       <input type="number" placeholder="age" name="age" />
       <label>email:</label>
@@ -34,7 +40,7 @@ export default function Contact() {
         })}
       />
       {errors.passwordRequired && (
-        <span>{errors.passwordRequired.message}</span>
+        <span className="error-message">{errors.passwordRequired.message}</span>
       )}
       <input type="submit" value="Submit" />
     </form>
