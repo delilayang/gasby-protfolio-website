@@ -7,7 +7,20 @@ export default function Contact() {
   console.log(watch("example"))
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
+      <label>name:</label>
+      <input
+        type="text"
+        placeholder="name"
+        name="nameRequired"
+        ref={register({
+          required: true,
+          minLength: { value: 3, message: "Name is invalid!" },
+        })}
+      />
+      {errors.nameRequired && <span>{errors.nameRequired.message} </span>}
+      <label>age:</label>
+      <input type="number" placeholder="age" name="age" />
       <label>email:</label>
       <input type="text" placeholder="email" name="email" ref={register} />
       <label>password:</label>
