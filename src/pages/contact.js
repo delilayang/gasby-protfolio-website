@@ -12,7 +12,7 @@ export default function Contact() {
       onSubmit={handleSubmit(onSubmit)}
       className="contact-form"
     >
-      <label>name:</label>
+      <label>Name:</label>
       <input
         type="text"
         placeholder="name"
@@ -25,11 +25,14 @@ export default function Contact() {
       {errors.nameRequired && (
         <span className="error-message">{errors.nameRequired.message} </span>
       )}
-      <label>age:</label>
+
+      <label>Age:</label>
       <input type="number" placeholder="age" name="age" />
-      <label>email:</label>
+
+      <label>Email:</label>
       <input type="text" placeholder="email" name="email" ref={register} />
-      <label>password:</label>
+
+      <label>Password:</label>
       <input
         type="text"
         placeholder="password"
@@ -42,6 +45,12 @@ export default function Contact() {
       {errors.passwordRequired && (
         <span className="error-message">{errors.passwordRequired.message}</span>
       )}
+
+      <span>
+        <input type="checkbox" name="remember" />
+        <label> Remember me</label>
+      </span>
+
       <input type="submit" value="Submit" className="btn-submit" />
     </form>
   )
