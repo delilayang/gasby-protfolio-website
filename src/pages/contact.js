@@ -8,9 +8,21 @@ export default function Contact() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input name="example" defaultValue="test" ref={register} />
-      <input name="exampleRequired" ref={register({ required: true })} />
-      {errors.exampleRequired && <span>This field is required!</span>}
+      <label>email:</label>
+      <input type="text" placeholder="email" name="email" ref={register} />
+      <label>password:</label>
+      <input
+        type="text"
+        placeholder="password"
+        name="passwordRequired"
+        ref={register({
+          required: "PASSWORD REQUIRED",
+          minLength: { value: 8, message: "TOO SHORT" },
+        })}
+      />
+      {errors.passwordRequired && (
+        <span>{errors.passwordRequired.message}</span>
+      )}
       <input type="submit" value="Submit" />
     </form>
   )
