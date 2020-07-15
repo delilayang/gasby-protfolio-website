@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 
 export default function Contact() {
   const { register, handleSubmit, watch, errors } = useForm()
-  const onSubmit = data => console.log(data)
+  const onSubmit = formData => console.log(formData)
   console.log(watch("example"))
 
   return (
@@ -18,7 +18,7 @@ export default function Contact() {
         placeholder="name"
         name="nameRequired"
         ref={register({
-          required: "NAME REQUIRED!",
+          required: "Name required!",
           minLength: { value: 3, message: "Name is invalid!" },
         })}
       />
@@ -38,8 +38,8 @@ export default function Contact() {
         placeholder="password"
         name="passwordRequired"
         ref={register({
-          required: "PASSWORD REQUIRED!",
-          minLength: { value: 8, message: "TOO SHORT" },
+          required: "Password required!",
+          minLength: { value: 8, message: "Too short!" },
         })}
       />
       {errors.passwordRequired && (
